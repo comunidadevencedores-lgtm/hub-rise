@@ -1,11 +1,11 @@
 import type { Metadata } from "next";
-import { Space_Grotesk, Inter } from "next/font/google";
+import { Plus_Jakarta_Sans, Inter } from "next/font/google";
 import "./globals.css";
 
-const display = Space_Grotesk({
+const display = Plus_Jakarta_Sans({
   subsets: ["latin"],
   variable: "--font-display",
-  weight: ["500", "600", "700"],
+  weight: ["600", "700", "800"],
 });
 
 const body = Inter({
@@ -15,9 +15,9 @@ const body = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Rise | Patrimônio, imóveis e consórcio em um só lugar",
+  title: "Auriz.on | Patrimônio, imóveis e consórcio em um só lugar",
   description:
-    "Rise é o ecossistema que une consórcio e imóveis de alto padrão para ajudar famílias a construir patrimônio de forma sólida, segura e consciente.",
+    "Auriz.on é o ecossistema que une consórcio e imóveis de alto padrão para ajudar famílias a construir patrimônio de forma sólida, segura e consciente.",
 };
 
 export default function RootLayout({
