@@ -65,6 +65,62 @@ const faqs = [
   },
 ];
 
+const footerLinks = [
+  { label: "Consórcio", href: "#pilares" },
+  { label: "Imóveis", href: "#pilares" },
+  { label: "Seguro", href: "#pilares" },
+  { label: "Dúvidas frequentes", href: "#pilares" },
+];
+
+const socials = [
+  {
+    label: "Instagram",
+    href: "https://instagram.com",
+    icon: (
+      <svg viewBox="0 0 24 24" fill="none" className="h-[18px] w-[18px]">
+        <rect x="3" y="3" width="18" height="18" rx="5" stroke="currentColor" strokeWidth="1.6" />
+        <circle cx="12" cy="12" r="4.2" stroke="currentColor" strokeWidth="1.6" />
+        <circle cx="17.3" cy="6.7" r="1.1" fill="currentColor" />
+      </svg>
+    ),
+  },
+  {
+    label: "LinkedIn",
+    href: "https://linkedin.com",
+    icon: (
+      <svg viewBox="0 0 24 24" fill="none" className="h-[18px] w-[18px]">
+        <rect x="3" y="3" width="18" height="18" rx="3" stroke="currentColor" strokeWidth="1.6" />
+        <circle cx="8" cy="8.5" r="1.15" fill="currentColor" />
+        <path d="M8 11.5V17" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" />
+        <path
+          d="M12 17v-3.2c0-1.4 1-2.3 2.2-2.3s2 .9 2 2.2V17"
+          stroke="currentColor"
+          strokeWidth="1.6"
+          strokeLinecap="round"
+        />
+        <path d="M12 11.5V17" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" />
+      </svg>
+    ),
+  },
+  {
+    label: "WhatsApp",
+    href: "https://wa.me/554100000000",
+    icon: (
+      <svg viewBox="0 0 24 24" fill="none" className="h-[18px] w-[18px]">
+        <path
+          d="M12 3.5a8.4 8.4 0 0 0-7.2 12.7L3.5 20.5l4.5-1.2A8.4 8.4 0 1 0 12 3.5Z"
+          stroke="currentColor"
+          strokeWidth="1.6"
+        />
+        <path
+          d="M8.6 8.8c.2-.6.6-.6 1-.6h.4c.2 0 .4 0 .6.5.2.5.6 1.5.6 1.6.1.1.1.3 0 .4-.1.2-.2.3-.3.4l-.4.5c-.1.1-.2.3-.1.5.2.4.7 1.1 1.5 1.7.9.7 1.5.9 1.7 1 .2.1.4.1.5-.1l.5-.6c.1-.2.3-.2.5-.1l1.4.7c.2.1.3.1.4.3.1.2.1.9-.2 1.3-.3.5-1.3 1-2.1 1-.8 0-2.6-.3-4.3-2-1.8-1.7-2.4-3.5-2.5-4.1-.1-.6.1-1.4.5-2Z"
+          fill="currentColor"
+        />
+      </svg>
+    ),
+  },
+];
+
 export default function Home() {
   return (
     <main className="relative">
@@ -247,10 +303,68 @@ export default function Home() {
       </section>
 
       {/* Footer — escuro, ancora o site */}
-      <footer className="border-t border-black/5 bg-ink px-6 py-10 md:px-10">
-        <div className="mx-auto flex max-w-8xl flex-col items-center justify-between gap-3 text-[12px] text-white/40 md:flex-row">
-          <p>© {new Date().getFullYear()} Auriz.on. Consórcio e imóveis.</p>
-          <p>Um ecossistema Embracon + Trato Feito</p>
+      <footer className="border-t border-black/5 bg-ink px-6 py-14 md:px-10">
+        <div className="mx-auto max-w-8xl">
+          <div className="grid gap-10 md:grid-cols-3 md:gap-8">
+            {/* Marca + tagline */}
+            <div>
+              <Image
+                src="/logo-orange.png"
+                alt="Auriz.on"
+                width={3031}
+                height={586}
+                className="h-6 w-auto object-contain brightness-0 invert"
+              />
+              <p className="mt-4 max-w-[220px] text-[13px] leading-relaxed text-white/40">
+                Um ecossistema Embracon + Trato Feito, pra você construir patrimônio com propósito.
+              </p>
+            </div>
+
+            {/* Links rápidos */}
+            <div className="md:justify-self-center">
+              <p className="text-[11px] font-semibold uppercase tracking-[0.25em] text-white/30">
+                Soluções
+              </p>
+              <ul className="mt-4 space-y-2.5">
+                {footerLinks.map((l) => (
+                  <li key={l.label}>
+                    <a
+                      href={l.href}
+                      className="focus-ring text-[13px] text-white/60 transition hover:text-brand"
+                    >
+                      {l.label}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            {/* Redes sociais */}
+            <div className="md:justify-self-end">
+              <p className="text-[11px] font-semibold uppercase tracking-[0.25em] text-white/30">
+                Fale com a gente
+              </p>
+              <div className="mt-4 flex gap-3">
+                {socials.map((s) => (
+                  <a
+                    key={s.label}
+                    href={s.href}
+                    target="_blank"
+                    rel="noreferrer"
+                    aria-label={s.label}
+                    className="focus-ring flex h-10 w-10 items-center justify-center rounded-full border border-white/10 text-white/50 transition hover:border-brand hover:text-brand"
+                  >
+                    {s.icon}
+                  </a>
+                ))}
+              </div>
+            </div>
+          </div>
+
+          <div className="mt-12 flex flex-col items-center justify-between gap-3 border-t border-white/10 pt-6 text-[12px] text-white/40 md:flex-row">
+            <p>© {new Date().getFullYear()} Auriz.on. Consórcio e imóveis.</p>
+            <p>Um ecossistema Embracon + Trato Feito</p>
+          </div>
         </div>
       </footer>
     </main>
