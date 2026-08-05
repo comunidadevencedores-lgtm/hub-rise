@@ -1,4 +1,5 @@
 import Image from "next/image";
+import WarpGrid from "./components/WarpGrid";
 
 const pillars = [
   {
@@ -66,7 +67,9 @@ const faqs = [
 
 export default function Home() {
   return (
-    <main className="bg-offwhite">
+    <main className="relative bg-offwhite">
+      <WarpGrid />
+
       {/* Nav mínima */}
       <header className="mx-auto flex max-w-8xl items-center justify-between px-6 py-10 md:px-10">
         <Image
@@ -85,37 +88,27 @@ export default function Home() {
         </a>
       </header>
 
-      {/* Hero — foto de fundo quente + ícone laranja marcado */}
+      {/* Hero — ícone da marca centralizado atrás do título */}
       <section className="relative overflow-hidden px-6 pb-32 pt-24 text-center md:px-10 md:pt-36">
-        {/* Foto de fundo */}
-        <div className="absolute inset-0 -z-20">
-          <Image
-            src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=2000&q=80"
-            alt=""
-            aria-hidden
-            fill
-            priority
-            className="object-cover"
-          />
-          {/* Overlay pra manter legibilidade e trazer o laranja da marca */}
-          <div className="absolute inset-0 bg-offwhite/90" />
-          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_rgba(238,114,36,0.22),_transparent_70%)]" />
-        </div>
+        <div
+          aria-hidden
+          className="pointer-events-none absolute inset-x-0 top-0 -z-10 h-[560px] bg-[radial-gradient(ellipse_at_top,_rgba(238,114,36,0.14),_transparent_70%)]"
+        />
 
-        {/* Ícone gigante, agora bem mais visível */}
+        {/* Ícone gigante centralizado atrás da frase */}
         <Image
           src="/icon-orange.png"
           alt=""
           aria-hidden
           width={1534}
           height={1249}
-          className="pointer-events-none absolute -right-40 -top-40 -z-10 h-[560px] w-[560px] opacity-[0.22] mix-blend-multiply md:-right-24 md:-top-24"
+          className="pointer-events-none absolute left-1/2 top-[46%] -z-10 h-[320px] w-[320px] -translate-x-1/2 -translate-y-1/2 opacity-[0.14] md:h-[520px] md:w-[520px]"
         />
 
-        <p className="text-[11px] font-semibold uppercase tracking-[0.35em] text-brand">
+        <p className="relative text-[11px] font-semibold uppercase tracking-[0.35em] text-brand">
           Consórcio · Imóveis
         </p>
-        <h1 className="mx-auto mt-8 max-w-3xl font-display text-[42px] font-semibold leading-[1.1] text-ink md:text-[64px]">
+        <h1 className="relative mx-auto mt-8 max-w-3xl font-display text-[42px] font-semibold leading-[1.1] text-ink md:text-[64px]">
           Patrimônio, construído com propósito.
         </h1>
         <p className="mx-auto mt-7 max-w-md text-[15px] leading-relaxed text-graphite/70">
