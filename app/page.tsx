@@ -21,6 +21,26 @@ const pillars = [
     image:
       "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1400&q=80",
   },
+  {
+    label: "Seguro",
+    title: "Proteção para o que você já construiu",
+    description:
+      "Seguros de vida, residencial e patrimonial, pensados para proteger a família e os bens conquistados ao longo do caminho.",
+    href: "https://embracon.com.br",
+    cta: "Conhecer os seguros",
+    image:
+      "https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&w=1400&q=80",
+  },
+  {
+    label: "Carta contemplada",
+    title: "Crédito já contemplado, pronto pra usar",
+    description:
+      "Cartas de crédito já contempladas, disponíveis para transferência — sem esperar sorteio ou lance.",
+    href: "https://embracon.com.br",
+    cta: "Ver cartas disponíveis",
+    image:
+      "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1400&q=80",
+  },
 ];
 
 const steps = [
@@ -126,17 +146,24 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Pilares — Consórcio / Imóveis */}
+      {/* Pilares — Consórcio / Imóveis / Seguro / Carta contemplada */}
       <section id="pilares" className="px-6 py-24 md:px-10">
         <div className="mx-auto max-w-8xl">
-          <div className="grid gap-6 md:grid-cols-2">
+          <p className="text-center text-[11px] font-semibold uppercase tracking-[0.3em] text-brand">
+            Nossas soluções
+          </p>
+          <h2 className="mt-3 text-center font-display text-[26px] font-semibold text-white">
+            Tudo o que você precisa pra subir de nível.
+          </h2>
+
+          <div className="mt-14 grid gap-6 md:grid-cols-2">
             {pillars.map((p) => (
               <a
                 key={p.label}
                 href={p.href}
                 target="_blank"
                 rel="noreferrer"
-                className="focus-ring group relative flex min-h-[420px] flex-col justify-end overflow-hidden rounded-2xl border border-white/10 p-8"
+                className="focus-ring group relative flex min-h-[340px] flex-col justify-end overflow-hidden rounded-2xl border border-white/10 p-8"
               >
                 <Image
                   src={p.image}
@@ -151,7 +178,7 @@ export default function Home() {
                   <p className="text-[11px] font-semibold uppercase tracking-[0.25em] text-brand">
                     {p.label}
                   </p>
-                  <h3 className="mt-3 max-w-xs font-display text-[24px] font-semibold text-white">
+                  <h3 className="mt-3 max-w-xs font-display text-[22px] font-semibold text-white">
                     {p.title}
                   </h3>
                   <p className="mt-3 max-w-sm text-[14px] leading-relaxed text-white/60">
@@ -183,10 +210,10 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Bloco de cor sólida — referência direta ao cartão de visita */}
-      <section className="bg-brand px-6 py-20 text-center md:px-10 md:py-28">
-        <p className="mx-auto max-w-lg font-display text-[26px] font-semibold leading-tight text-white md:text-[34px]">
-          Um propósito. Duas formas de construir patrimônio.
+      {/* Bloco sóbrio — mais fácil de ler que o laranja sólido */}
+      <section className="bg-offwhite px-6 py-20 text-center md:px-10 md:py-28">
+        <p className="mx-auto max-w-lg font-display text-[26px] font-semibold leading-tight text-ink md:text-[34px]">
+          Suba de nível com a gente.
         </p>
       </section>
 
