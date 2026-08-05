@@ -23,6 +23,12 @@ const pillars = [
   },
 ];
 
+const steps = [
+  { n: "01", title: "Planeje", desc: "Escolha a carta de crédito no valor do seu objetivo." },
+  { n: "02", title: "Contemple", desc: "Por lance ou sorteio, sem juros no processo." },
+  { n: "03", title: "Realize", desc: "Use o crédito num imóvel curado pelo ecossistema." },
+];
+
 const faqs = [
   {
     q: "O Auriz.on vende imóveis ou consórcios diretamente?",
@@ -42,7 +48,7 @@ export default function Home() {
   return (
     <main>
       {/* Nav mínima */}
-      <header className="mx-auto flex max-w-8xl items-center justify-between px-6 py-8 md:px-10">
+      <header className="mx-auto flex max-w-8xl items-center justify-between px-6 py-10 md:px-10">
         <Image
           src="/logo-orange.png"
           alt="Auriz.on"
@@ -53,54 +59,75 @@ export default function Home() {
         />
         <a
           href="#pilares"
-          className="focus-ring text-[13px] font-medium text-white/60 transition hover:text-white"
+          className="focus-ring text-[13px] font-medium text-white/50 transition hover:text-white"
         >
           Ver soluções ↓
         </a>
       </header>
 
-      {/* Hero */}
-      <section className="relative overflow-hidden px-6 pb-24 pt-16 text-center md:px-10 md:pt-24">
+      {/* Hero — enxuto, com muito respiro, ícone gigante como marca gráfica (ref. cartão de visita) */}
+      <section className="relative overflow-hidden px-6 pb-32 pt-24 text-center md:px-10 md:pt-36">
         <div
           aria-hidden
-          className="pointer-events-none absolute inset-x-0 top-0 -z-10 h-[520px] bg-[radial-gradient(ellipse_at_top,_rgba(59,110,246,0.18),_transparent_70%)]"
+          className="pointer-events-none absolute inset-x-0 top-0 -z-10 h-[560px] bg-[radial-gradient(ellipse_at_top,_rgba(238,114,36,0.16),_transparent_70%)]"
         />
-        <p className="text-[12px] font-semibold uppercase tracking-[0.3em] text-brand">
+        {/* Grade pontilhada sutil — textura "tech" */}
+        <div
+          aria-hidden
+          className="pointer-events-none absolute inset-0 -z-10 opacity-[0.07] [background-image:radial-gradient(currentColor_1px,transparent_1px)] [background-size:28px_28px] text-white"
+        />
+        {/* Ícone "a." gigante, bem sutil, como marca gráfica de fundo */}
+        <Image
+          src="/icon-orange.png"
+          alt=""
+          aria-hidden
+          width={1534}
+          height={1249}
+          className="pointer-events-none absolute -right-40 -top-40 -z-10 h-[560px] w-[560px] opacity-[0.06] md:-right-24 md:-top-24"
+        />
+
+        <p className="text-[11px] font-semibold uppercase tracking-[0.35em] text-brand">
           Consórcio · Imóveis
         </p>
-        <h1 className="mx-auto mt-6 max-w-3xl font-display text-[40px] font-semibold leading-[1.15] text-white md:text-[56px]">
-          Duas formas de construir patrimônio. Um só propósito.
+        <h1 className="mx-auto mt-8 max-w-3xl font-display text-[42px] font-semibold leading-[1.1] text-white md:text-[64px]">
+          Patrimônio, construído com propósito.
         </h1>
-        <p className="mx-auto mt-6 max-w-xl text-[15px] leading-relaxed text-white/60">
-          O Auriz.on une consórcio e imóveis de alto padrão para ajudar famílias a
-          planejar, proteger e fazer crescer o seu patrimônio de forma
-          sólida, segura e consciente.
+        <p className="mx-auto mt-7 max-w-md text-[15px] leading-relaxed text-white/50">
+          Consórcio e imóveis de alto padrão, num só ecossistema.
         </p>
       </section>
 
-      {/* O que é */}
-      <section className="border-y border-white/5 bg-navy px-6 py-20 md:px-10">
-        <div className="mx-auto grid max-w-8xl gap-10 md:grid-cols-2 md:items-center">
-          <div>
-            <p className="text-[11px] font-semibold uppercase tracking-[0.25em] text-brand">
-              O ecossistema
-            </p>
-            <h2 className="mt-3 font-display text-[28px] font-semibold text-white md:text-[32px]">
-              Patrimônio não é uma decisão isolada.
-            </h2>
-          </div>
-          <p className="text-[15px] leading-relaxed text-white/60">
-            Comprar um imóvel de alto padrão envolve planejamento financeiro,
-            segurança jurídica e visão de longo prazo. Por isso o Auriz.on
-            conecta duas frentes especializadas — consórcio e imóveis — sob
-            um mesmo padrão de excelência, para que cada família encontre o
-            caminho certo para o seu patrimônio.
+      {/* Como funciona — inspirado no fluxo do consórcio, minimalista e técnico */}
+      <section className="border-y border-white/5 px-6 py-24 md:px-10">
+        <div className="mx-auto max-w-8xl">
+          <p className="text-center text-[11px] font-semibold uppercase tracking-[0.3em] text-brand">
+            Como funciona
           </p>
+
+          <div className="relative mt-16 grid gap-16 md:grid-cols-3 md:gap-8">
+            <div
+              aria-hidden
+              className="pointer-events-none absolute inset-x-0 top-6 hidden h-px bg-gradient-to-r from-transparent via-white/15 to-transparent md:block"
+            />
+            {steps.map((s) => (
+              <div key={s.n} className="relative text-center md:text-left">
+                <span className="flex h-9 w-9 items-center justify-center rounded-full bg-brand font-display text-[12px] font-bold text-white md:mx-0 mx-auto">
+                  {s.n}
+                </span>
+                <h3 className="mt-4 font-display text-[19px] font-semibold text-white">
+                  {s.title}
+                </h3>
+                <p className="mx-auto mt-2 max-w-[220px] text-[13px] leading-relaxed text-white/50 md:mx-0">
+                  {s.desc}
+                </p>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 
       {/* Pilares — Consórcio / Imóveis */}
-      <section id="pilares" className="px-6 py-20 md:px-10">
+      <section id="pilares" className="px-6 py-24 md:px-10">
         <div className="mx-auto max-w-8xl">
           <div className="grid gap-6 md:grid-cols-2">
             {pillars.map((p) => (
@@ -154,6 +181,13 @@ export default function Home() {
             </div>
           ))}
         </div>
+      </section>
+
+      {/* Bloco de cor sólida — referência direta ao cartão de visita */}
+      <section className="bg-brand px-6 py-20 text-center md:px-10 md:py-28">
+        <p className="mx-auto max-w-lg font-display text-[26px] font-semibold leading-tight text-white md:text-[34px]">
+          Um propósito. Duas formas de construir patrimônio.
+        </p>
       </section>
 
       {/* FAQ */}
