@@ -19,6 +19,7 @@ body {
 .focus-ring {
   outline: none;
 }
+
 .focus-ring:focus-visible {
   outline: 2px solid #EE7224;
   outline-offset: 2px;
