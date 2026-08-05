@@ -7,9 +7,9 @@ const pillars = [
     description:
       "Cartas de crédito para imóvel, veículo e investimento, com a estrutura e a segurança de uma administradora consolidada no mercado.",
     href: "https://embracon.com.br",
-    cta: "Conhecer o consórcio",
+    cta: "Simular consórcio",
     image:
-      "https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&w=1400&q=80",
+      "https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&w=1400&q=80",
   },
   {
     label: "Imóveis",
@@ -39,7 +39,7 @@ const pillars = [
     href: "https://embracon.com.br",
     cta: "Ver cartas disponíveis",
     image:
-      "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1400&q=80",
+      "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=1400&q=80",
   },
 ];
 
@@ -121,6 +121,13 @@ export default function Home() {
         <p className="mx-auto mt-7 max-w-md text-[15px] leading-relaxed text-graphite/70">
           Consórcio e imóveis de alto padrão, num só ecossistema.
         </p>
+
+        <a
+          href="#pilares"
+          className="focus-ring mt-9 inline-flex items-center gap-2 rounded-full bg-brand px-8 py-4 text-[14px] font-semibold text-white shadow-[0_10px_30px_-8px_rgba(238,114,36,0.55)] transition hover:brightness-110"
+        >
+          Simular agora →
+        </a>
       </section>
 
       {/* Como funciona — cada passo com uma cor quente da paleta */}
@@ -187,7 +194,7 @@ export default function Home() {
                   <p className="mt-3 max-w-sm text-[14px] leading-relaxed text-white/70">
                     {p.description}
                   </p>
-                  <span className="mt-6 inline-flex items-center gap-2 text-[13px] font-semibold text-white transition group-hover:gap-3">
+                  <span className="mt-6 inline-flex items-center gap-2 rounded-full bg-brand px-5 py-2.5 text-[13px] font-semibold text-white transition group-hover:brightness-110">
                     {p.cta} →
                   </span>
                 </div>
