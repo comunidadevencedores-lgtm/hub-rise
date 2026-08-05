@@ -67,7 +67,7 @@ const faqs = [
 
 export default function Home() {
   return (
-    <main className="relative bg-offwhite">
+    <main className="relative">
       <WarpGrid />
 
       {/* Nav mínima */}
