@@ -303,8 +303,18 @@ export default function Home() {
       </section>
 
       {/* Footer — escuro, ancora o site */}
-      <footer className="border-t border-black/5 bg-ink px-6 py-14 md:px-10">
-        <div className="mx-auto max-w-8xl">
+      <footer className="relative overflow-hidden border-t border-black/5 bg-ink px-6 py-14 md:px-10">
+        {/* Marca d'água do ícone, versão branca */}
+        <Image
+          src="/icon-white.png"
+          alt=""
+          aria-hidden
+          width={1534}
+          height={1249}
+          className="pointer-events-none absolute -bottom-24 -right-16 h-[320px] w-[320px] opacity-[0.06] md:h-[420px] md:w-[420px]"
+        />
+
+        <div className="relative mx-auto max-w-8xl">
           <div className="grid gap-10 md:grid-cols-3 md:gap-8">
             {/* Marca + tagline */}
             <div>
