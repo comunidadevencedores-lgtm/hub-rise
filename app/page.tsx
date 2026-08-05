@@ -85,19 +85,31 @@ export default function Home() {
         </a>
       </header>
 
-      {/* Hero — claro, com muito respiro, ícone gigante como marca gráfica */}
+      {/* Hero — foto de fundo quente + ícone laranja marcado */}
       <section className="relative overflow-hidden px-6 pb-32 pt-24 text-center md:px-10 md:pt-36">
-        <div
-          aria-hidden
-          className="pointer-events-none absolute inset-x-0 top-0 -z-10 h-[560px] bg-[radial-gradient(ellipse_at_top,_rgba(238,114,36,0.14),_transparent_70%)]"
-        />
+        {/* Foto de fundo */}
+        <div className="absolute inset-0 -z-20">
+          <Image
+            src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=2000&q=80"
+            alt=""
+            aria-hidden
+            fill
+            priority
+            className="object-cover"
+          />
+          {/* Overlay pra manter legibilidade e trazer o laranja da marca */}
+          <div className="absolute inset-0 bg-offwhite/90" />
+          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_rgba(238,114,36,0.22),_transparent_70%)]" />
+        </div>
+
+        {/* Ícone gigante, agora bem mais visível */}
         <Image
           src="/icon-orange.png"
           alt=""
           aria-hidden
           width={1534}
           height={1249}
-          className="pointer-events-none absolute -right-40 -top-40 -z-10 h-[560px] w-[560px] opacity-[0.08] md:-right-24 md:-top-24"
+          className="pointer-events-none absolute -right-40 -top-40 -z-10 h-[560px] w-[560px] opacity-[0.22] mix-blend-multiply md:-right-24 md:-top-24"
         />
 
         <p className="text-[11px] font-semibold uppercase tracking-[0.35em] text-brand">
@@ -117,7 +129,6 @@ export default function Home() {
           <p className="text-center text-[11px] font-semibold uppercase tracking-[0.3em] text-brand">
             Como funciona
           </p>
-
           <div className="relative mt-16 grid gap-16 md:grid-cols-3 md:gap-8">
             <div
               aria-hidden
@@ -149,7 +160,6 @@ export default function Home() {
           <h2 className="mt-3 text-center font-display text-[26px] font-semibold text-ink">
             Tudo o que você precisa pra subir de nível.
           </h2>
-
           <div className="mt-14 grid gap-6 md:grid-cols-2">
             {pillars.map((p) => (
               <a
@@ -167,7 +177,6 @@ export default function Home() {
                   className="object-cover transition duration-700 group-hover:scale-105"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-ink via-ink/70 to-ink/10" />
-
                 <div className="relative">
                   <p className="text-[11px] font-semibold uppercase tracking-[0.25em] text-brand">
                     {p.label}
@@ -220,7 +229,6 @@ export default function Home() {
           <h2 className="mt-3 text-center font-display text-[26px] font-semibold text-ink">
             Perguntas frequentes
           </h2>
-
           <div className="mt-10 space-y-4">
             {faqs.map((f) => (
               <details
